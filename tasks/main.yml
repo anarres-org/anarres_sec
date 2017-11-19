@@ -1,0 +1,11 @@
+---
+
+- name: import iptables tasks
+  import_tasks: iptables.yml tags=iptables
+  notify: save iptables rules
+
+- name: import fail2ban tasks
+  import_tasks: fail2ban.yml tags=fail2ban
+
+- name: import ssh tasks
+  import_tasks: ssh.yml tags=ssh
