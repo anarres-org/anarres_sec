@@ -8,9 +8,9 @@ galaxy_info:
   min_ansible_version: 2.4
 
   platforms:
-  - name: Debian
+    name: Debian
     versions:
-    - stretch
+      - stretch
 
   galaxy_tags:
     anarres
@@ -19,6 +19,4 @@ galaxy_info:
     fail2ban
     iptables
 
-dependencies:
-  - src: https://git.hdg.sh/anarres/common
-    scm: git
+  dependencies: []
