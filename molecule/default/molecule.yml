@@ -1,9 +1,7 @@
 ---
 dependency:
   name: galaxy
-  options:
-    ignore-errors: yes
-    role-file: requirements.yml
+  enabled: False
 driver:
   name: vagrant
   provider:
@@ -30,6 +28,7 @@ provisioner:
     become: true
     extra-vars:
       testing: true
+      docker_registry_mirror: http://172.16.100.1:5000
   env:
     ANSIBLE_LIBRARY: /etc/ansible/library
   lint:
