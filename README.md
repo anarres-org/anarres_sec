@@ -44,6 +44,10 @@ placed at the end.
 
 ## Dependencies
 
+You can manually clone the repos in your **roles_path** or with:
+
+`ansible-galaxy install -r requierements.yml`.
+
 * [anarres/anarres-common](https://git.hdg.sh/anarres/anarres-common)
 
 ## Example playbook
