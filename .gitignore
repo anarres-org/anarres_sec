@@ -1,6 +1,5 @@
-.vagrant
 *.retry
 custom
-.cache
 .molecule
-__pycache__
+.cache
+*.pyc
