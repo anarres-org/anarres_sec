@@ -1,73 +1,37 @@
 ---
-- name: install iptables
-  apt:
-    pkg: "{{ item }}"
+- name: Install iptables
+  package:
+    name: "{{ item }}"
     state: present
   with_items:
     - iptables-persistent
-  tags: iptables
 
-- name: disable ipv6 globally
+- name: Disable IPv6 globally
   lineinfile:
     line: 'net.ipv6.conf.all.disable_ipv6 = 1'
     state: present
     insertafter: EOF
     path: /etc/sysctl.conf
-  notify: activate sysctl
-  tags: iptables
+  notify: Activate sysctl
 
-- name: allow established and related connections
-  iptables:
-    chain: INPUT
-    ctstate: ESTABLISHED,RELATED
-    jump: ACCEPT
-  tags: iptables
+- name: Set basic iptables rules
+  iptables_raw:
+    name: default_rules
+    weight: 10
+    keep_unmanaged: false
+    rules: |
+      -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+      -A INPUT -i lo -j ACCEPT
+      -A INPUT -p tcp -m state --state NEW -m tcp --dport {{ ssh_port | default('22') }} -j ACCEPT
+      -P INPUT DROP
+      -P FORWARD DROP
+      -P OUTPUT ACCEPT
 
-- name: allow internal traffic
-  iptables:
-    chain: INPUT
-    in_interface: lo
-    jump: ACCEPT
-  tags: iptables
-
-- name: allow SSH connections
-  iptables:
-    chain: INPUT
-    ctstate: NEW
-    protocol: tcp
-    destination_port: "{{ ssh_port | default('22') }}"
-    jump: ACCEPT
-  tags: iptables
-
-- name: allow http traffic
-  iptables:
-    chain: INPUT
-    ctstate: NEW
-    protocol: tcp
-    destination_port: 80
-    jump: ACCEPT
-  tags: iptables
-
-- name: enable logging
-  iptables:
-    chain: INPUT
-    jump: LOG
-  tags: iptables
-
-- name: set iptables default INPUT policy to DROP
-  iptables:
-    chain: INPUT
-    policy: DROP
-  tags: iptables
-
-- name: set iptables default OUTPUT policy to ACCEPT
-  iptables:
-    chain: OUTPUT
-    policy: ACCEPT
-  tags: iptables
-
-- name: set iptables default FORWARD policy to DROP
-  iptables:
-    chain: FORWARD
-    policy: DROP
-  tags: iptables
+- name: Enable logging
+  iptables_raw:
+    name: enable_logging
+    weight: 100
+    rules: |
+          -A INPUT ! -i lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
+          -A OUTPUT ! -o lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
+          -A FORWARD ! -i lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
