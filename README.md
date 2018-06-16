@@ -16,7 +16,7 @@ distributions too or just requieres a few changes.
 
 ## Requirements
 
-`sudo` and `python`.
+* [iptables_raw](https://github.com/Nordeus/ansible_iptables_raw)
 
 ## Role Variables
 
@@ -28,7 +28,7 @@ distributions too or just requieres a few changes.
 
 * `admin_xmpp`: Jabber account of an administrator. Will receive `fail2ban`
 notifications.
-* `sendxmpp_config`: `snedxmpp` configuration file path.
+* `sendxmpp_config`: `sendxmpp` configuration file path.
 
 ### fail2ban
 
@@ -44,18 +44,14 @@ placed at the end.
 
 ## Dependencies
 
-You can manually clone the repos in your **roles_path** or with:
-
-`ansible-galaxy install -r requierements.yml`.
-
-* [anarres/anarres-common](https://git.hdg.sh/anarres/anarres-common)
+None.
 
 ## Example playbook
 
 ```yaml
 - hosts: all
+  become: true
   roles:
-  	- anarres-common
     - anarres-sec
 ```
 
