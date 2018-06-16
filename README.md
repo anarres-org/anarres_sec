@@ -2,6 +2,10 @@
 
 Ansible role for basic GNU/Linux server hardening.
 
+* Sets up `iptables` for IPv4. **IPv6** will be disabled!!!
+* Sets up `fail2ban` with alerts through XMPP.
+* Hardens SSH.
+
 It is part of [anarres](https://git.hdg.sh/anarres/anarres), a playbook that
 uses a collection of roles to deploy a full-featured server. But it can be used
 and tested independently.
