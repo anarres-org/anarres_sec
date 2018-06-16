@@ -1,6 +1,6 @@
 ---
-- name: replace sshd configuration
+- name: Replace sshd configuration
   template:
     src: sshd.j2
     dest: /etc/ssh/sshd_config
-  notify: restart sshd
+  notify: Restart sshd
