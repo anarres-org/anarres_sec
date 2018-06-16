@@ -1,7 +1,7 @@
 ---
 - name: Restart fail2ban
   service:
-    name: Fail2ban
+    name: fail2ban
     state: restarted
 
 - name: Restart sshd
