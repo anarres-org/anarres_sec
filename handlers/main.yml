@@ -1,16 +1,13 @@
 ---
-- name: save iptables rules
-  shell: iptables-save >/etc/iptables/rules.v4
-
-- name: restart fail2ban
+- name: Restart fail2ban
   service:
-    name: fail2ban
+    name: Fail2ban
     state: restarted
 
-- name: restart sshd
+- name: Restart sshd
   service:
     name: sshd
     state: restarted
 
-- name: activate sysctl
+- name: Activate sysctl
   command: "sysctl -p /etc/sysctl.conf"
