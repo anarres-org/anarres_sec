@@ -26,11 +26,12 @@
       -P INPUT DROP
       -P FORWARD DROP
       -P OUTPUT ACCEPT
+  changed_when: false
 
 - name: Enable logging
   iptables_raw:
     name: enable_logging
-    weight: 100
+    weight: 99
     rules: |
           -A INPUT ! -i lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
           -A OUTPUT ! -o lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
