@@ -6,6 +6,18 @@ Ansible role for basic GNU/Linux server hardening.
 * Sets up `fail2ban` with alerts through XMPP.
 * Hardens SSH.
 
+It requires `iptables` to be flushed if already installed. This can be
+achieved with:
+```bash
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -t nat -F
+iptables -t mangle -F
+iptables -F
+iptables -X
+```
+
 It is part of [anarres](https://git.hdg.sh/anarres/anarres), a playbook that
 uses a collection of roles to deploy a full-featured server. But it can be used
 and tested independently.

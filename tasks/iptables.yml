@@ -18,7 +18,6 @@
   iptables_raw:
     name: default_rules
     weight: 10
-    keep_unmanaged: false
     rules: |
       -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
       -A INPUT -i lo -j ACCEPT
@@ -26,7 +25,6 @@
       -P INPUT DROP
       -P FORWARD DROP
       -P OUTPUT ACCEPT
-  changed_when: false
 
 - name: Enable logging
   iptables_raw:
