@@ -18,19 +18,15 @@
   iptables_raw:
     name: default_rules
     weight: 10
-    rules: |
-      -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-      -A INPUT -i lo -j ACCEPT
-      -A INPUT -p tcp -m state --state NEW -m tcp --dport {{ ssh_port | default('22') }} -j ACCEPT
-      -P INPUT DROP
-      -P FORWARD DROP
-      -P OUTPUT ACCEPT
+    rules: "{{ iptables_rules_general }}"
+
+- name: Set basic iptables policies
+  iptables_raw:
+    name: default_policies
+    rules: "{{ iptables_policies_general }}"
 
 - name: Enable logging
   iptables_raw:
     name: enable_logging
     weight: 99
-    rules: |
-          -A INPUT ! -i lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
-          -A OUTPUT ! -o lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
-          -A FORWARD ! -i lo -j LOG --log-prefix "DROP " --log-ip-options --log-tcp-options
+    rules: "{{ iptables_rules_logging }}"
