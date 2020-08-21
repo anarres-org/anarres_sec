@@ -37,5 +37,7 @@ iptables_policies_general: |
   -P FORWARD DROP
   -P OUTPUT ACCEPT
 
+iptables_enable_logging: false
+
 iptables_rules_logging: |
   -A INPUT -j LOG

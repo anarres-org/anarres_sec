@@ -30,3 +30,4 @@
     name: enable_logging
     weight: 99
     rules: "{{ iptables_rules_logging }}"
+  when: iptables_enable_logging
