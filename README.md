@@ -37,7 +37,7 @@ These are the tested GNU/Linux distributions. Maybe it works on some other
 distributions too or just requieres a few changes.
 
 * [debian](https://www.debian.org/)
-	* stretch
+	* buster
 
 ## Requirements
 

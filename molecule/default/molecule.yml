@@ -6,13 +6,9 @@ driver:
   name: vagrant
   provider:
     name: virtualbox
-lint:
-  name: yamllint
-  options:
-    config-file: molecule/default/.yamllint
 platforms:
   - name: stretch
-    box: debian/stretch64
+    box: debian/buster64
     interfaces:
       - network_name: private_network
         auto_config: true
@@ -22,6 +18,11 @@ platforms:
       - "vm.synced_folder '.', '/vagrant', disabled: true"
     groups:
       - anarres
+lint: |
+  set -e
+  yamllint -c molecule/default/.yamllint .
+  ansible-lint --exclude molecule/ --exclude library/
+  flake8 --exclude roles,molecule,library
 provisioner:
   name: ansible
   options:
@@ -31,8 +32,6 @@ provisioner:
       docker_registry_mirror: http://172.16.100.1:5000
   env:
     ANSIBLE_LIBRARY: /etc/ansible/library
-  lint:
-    name: ansible-lint
   config_options:
     defaults:
       callback_whitelist: profile_tasks
@@ -42,5 +41,3 @@ verifier:
   name: testinfra
   options:
     sudo: true
-  lint:
-    name: flake8
