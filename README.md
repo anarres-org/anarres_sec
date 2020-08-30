@@ -1,4 +1,4 @@
-# Sec
+# Anarres sec
 
 Ansible role for basic GNU/Linux server hardening.
 
@@ -81,7 +81,7 @@ None.
   vars:
   	admin_xmpp: admin@host.com
   roles:
-    - anarres-sec
+    - anarres_sec
 ```
 
 ## Testing
