@@ -38,3 +38,4 @@ def test_sshd_conf(host):
     assert sshd_conf.contains("^PasswordAuthentication no$")
     assert sshd_conf.user == "root"
     assert sshd_conf.group == "root"
+    assert sshd_conf.mode == 0o640

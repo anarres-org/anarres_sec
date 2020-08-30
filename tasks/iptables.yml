@@ -12,6 +12,7 @@
     state: present
     insertafter: EOF
     path: /etc/sysctl.conf
+    mode: 0644
   notify: Activate sysctl
 
 - name: Set basic iptables rules

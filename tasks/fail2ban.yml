@@ -18,4 +18,5 @@
   template:
     src: fail2ban.j2
     dest: /etc/fail2ban/jail.local
+    mode: 0640
   notify: Restart fail2ban
