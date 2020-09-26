@@ -5,6 +5,7 @@
     state: present
   with_items:
     - iptables-persistent
+  notify: Restart Docker
 
 - name: Disable IPv6 globally
   lineinfile:
