@@ -64,6 +64,8 @@ By default is the same as `admin_xmpp`.
 
 ### iptables
 
+* `iptables_keep_unmanaged`: (Default: `true`) If set to `false` deletes all
+   rules which are not set by ansible_raw.
 * `iptables_rules_general`: Default `iptables` rules.
 * `iptables_policies_general`: Default `iptables` policies.
 * `iptables_rules_logging`: Default `iptables` logging rules. They will be
