@@ -23,6 +23,8 @@ fail2ban_xmpp_notify: "{{ admin_xmpp }}"
 
 ## iptables
 
+iptables_keep_unmanaged: true
+
 iptables_rules_general: |
   -A INPUT -m state --state INVALID -j DROP
   -A INPUT -p tcp ! --syn -m state --state NEW -j DROP

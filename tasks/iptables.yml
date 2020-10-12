@@ -20,16 +20,19 @@
   iptables_raw:
     name: default_rules
     weight: 10
+    keep_unmanaged: "{{ iptables_keep_unmanaged }}"
     rules: "{{ iptables_rules_general }}"
 
 - name: Set basic iptables policies
   iptables_raw:
     name: default_policies
+    keep_unmanaged: "{{ iptables_keep_unmanaged }}"
     rules: "{{ iptables_policies_general }}"
 
 - name: Enable logging
   iptables_raw:
     name: enable_logging
     weight: 99
+    keep_unmanaged: "{{ iptables_keep_unmanaged }}"
     rules: "{{ iptables_rules_logging }}"
   when: iptables_enable_logging
