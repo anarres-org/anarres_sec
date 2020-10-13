@@ -23,3 +23,6 @@
     name: docker
     state: restarted
   when: docker_service_exists.stat.exists
+
+- name: save iptables
+  command: netfilter-persistent save
