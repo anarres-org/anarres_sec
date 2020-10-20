@@ -20,7 +20,7 @@
     chain: INPUT
     match: state
     ctstate: INVALID
-    jump: drop
+    jump: DROP
     comment: drop invalid
     action: insert
     rule_num: 1
@@ -33,7 +33,7 @@
     syn: negate
     match: state
     ctstate: NEW
-    jump: drop
+    jump: DROP
     comment: drop new TCP packets without the SYN flag
     action: insert
     rule_num: 2
