@@ -23,7 +23,7 @@
     jump: drop
     comment: drop invalid
     action: insert
-    num_rule: 1
+    rule_num: 1
   notify: save iptables
 
 - name: iptables drop new TCP packets without the SYN flag
@@ -36,7 +36,7 @@
     jump: drop
     comment: drop new TCP packets without the SYN flag
     action: insert
-    num_rule: 2
+    rule_num: 2
   notify: save iptables
 
 - name: iptables drop XMAS packets
@@ -53,7 +53,7 @@
     log_prefix: "DROPPED XMAS PACKET:"
     comment: drop XMAS packets
     action: insert
-    num_rule: 3
+    rule_num: 3
   notify: save iptables
 
 - name: iptables allow related and established connections
@@ -63,7 +63,7 @@
     jump: ACCEPT
     comment: allow related and established connections
     action: insert
-    num_rule: 4
+    rule_num: 4
   notify: save iptables
 
 - name: iptables allow internal traffic
