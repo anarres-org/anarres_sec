@@ -45,7 +45,7 @@
     protocol: tcp
     tcp_flags:
       flags: ALL
-      flag_set:
+      flags_set:
         - FIN
         - PSH
         - URG
