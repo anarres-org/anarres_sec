@@ -29,12 +29,6 @@ provisioner:
     become: true
     extra-vars:
       testing: true
-      docker_registry_mirror: http://172.16.100.1:5000
-  env:
-    ANSIBLE_LIBRARY: /etc/ansible/library
-  config_options:
-    defaults:
-      callback_whitelist: profile_tasks
 scenario:
   name: default
 verifier:
