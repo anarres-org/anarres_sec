@@ -61,7 +61,7 @@
     chain: INPUT
     ctstate: ESTABLISHED,RELATED
     jump: ACCEPT
-    comment: allow related and established connections                      
+    comment: allow related and established connections
     action: insert
     num_rule: 4
   notify: save iptables
@@ -93,16 +93,20 @@
     comment: allow ICMP ping
   notify: save iptables
 
-  #- name: Set basic iptables policies
-  #  iptables_raw:
-  #    name: default_policies
-  #    keep_unmanaged: "{{ iptables_keep_unmanaged }}"
-  #    rules: "{{ iptables_policies_general }}"
-  #
-  #- name: Enable logging
-  #  iptables_raw:
-  #    name: enable_logging
-  #    weight: 99
-  #    keep_unmanaged: "{{ iptables_keep_unmanaged }}"
-  #    rules: "{{ iptables_rules_logging }}"
-  #  when: iptables_enable_logging
+- name: iptables set the policy for the INPUT chain to DROP
+  iptables:
+    chain: INPUT
+    policy: DROP
+  notify: save iptables
+
+- name: iptables set the policy for the FORWARD chain to DROP
+  iptables:
+    chain: FORWARD
+    policy: DROP
+  notify: save iptables
+
+- name: iptables set the policy for the OUTPUT chain to ACCEPT
+  iptables:
+    chain: OUTPUT
+    policy: ACCEPT
+  notify: save iptables
