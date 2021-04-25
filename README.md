@@ -2,17 +2,18 @@
 
 Ansible role for basic GNU/Linux server hardening.
 
-* Sets up `iptables` for IPv4. **IPv6** will be disabled!!!
-	* Will disable all incoming traffic by default except for established
-	connectios, ICMP type 8 pings, the ssh_port and the **loopback** network
-	traffic.
+* Sets up `iptables` for IPv4. **IPv6** will be disabled.
+  * Will disable all incoming traffic by default except for established
+  connectios, ICMP type 8 pings, the ssh_port and the **loopback** network
+  traffic.
 * Sets up `fail2ban` with alerts through XMPP.
-	* With the SSHd jail.
+  * With the SSHd jail.
 * Hardens SSH.
-	* Disables root login, password login...
+  * Disables root login, password login…
 
 It requires `iptables` to be flushed if already installed. This can be
 achieved with:
+
 ```bash
 iptables -P INPUT ACCEPT
 iptables -P FORWARD ACCEPT
@@ -36,13 +37,16 @@ in this [pull request](https://github.com/ansible/ansible/pull/21054).
 These are the tested GNU/Linux distributions. Maybe it works on some other
 distributions too or just requieres a few changes.
 
-* [debian](https://www.debian.org/)
-	* buster
+* [Debian](https://www.debian.org/)
+  * buster
+* [Ubuntu](https://ubuntu.com/)
+  * latest
 
 ## Requirements
 
 * [iptables_raw](https://github.com/Nordeus/ansible_iptables_raw)
 * A configured `sendxmpp_config` file so `fail2ban` is able to send the alerts.
+* `pip install -r requirements.txt`
 
 ## Role Variables
 
@@ -73,7 +77,7 @@ placed at the end.
 
 ## Dependencies
 
-None.
+`sudo` and `python` in the target host(s).
 
 ## Example playbook
 
@@ -81,23 +85,30 @@ None.
 - hosts: all
   become: true
   vars:
-  	admin_xmpp: admin@host.com
+    admin_xmpp: admin@host.com
   roles:
     - anarres_sec
 ```
 
 ## Testing
 
-To test the role you need [molecule](http://molecule.readthedocs.io/en/latest/)
-.
+To test the role you need [molecule](http://molecule.readthedocs.io/en/latest/),
+**vagrant**, **virtualbox** and some python requirements that can be installed wwith
+`pip install -r requirements-dev.txt`.
 
 ```bash
 molecule test
 ```
 
+or
+
+```bash
+make test
+```
+
 There is more documentation about the installation and configuration of the
 required tools at
-[wiki-testing](https://git.hdg.sh/anarres/anarres/wiki/testing).
+[Testing - Anarres documentation](https://anarres-org.github.io/anarres/testing/).
 
 ## License
 
@@ -105,4 +116,4 @@ GPLv3
 
 ## Author Information
 
-m0wer: m0wer (at) autistici.org
+* m0wer (at) autistici (dot) org
