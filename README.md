@@ -24,7 +24,7 @@ iptables -F
 iptables -X
 ```
 
-It is part of [anarres](https://git.hdg.sh/anarres/anarres), a playbook that
+It is part of [anarres](https://github.com/anarres-org/anarres), a playbook that
 uses a collection of roles to deploy a full-featured server. But it can be used
 and tested independently.
 

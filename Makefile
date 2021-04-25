@@ -15,7 +15,7 @@ update:
 	pip install pip-tools
 	rm requirements.txt
 	touch requirements.txt
-	pip-compile -Ur --allow-unsafe
+	pip-compile -Ur requirements.in --allow-unsafe
 
 	pip install -r requirements.txt
 
