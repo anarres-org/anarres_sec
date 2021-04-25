@@ -28,10 +28,6 @@ It is part of [anarres](https://git.hdg.sh/anarres/anarres), a playbook that
 uses a collection of roles to deploy a full-featured server. But it can be used
 and tested independently.
 
-**Note**: This role is not idempotent but intends to be. We are waiting for the
-new version of the `ipatbles_raw` asnible module. You can follow the updates
-in this [pull request](https://github.com/ansible/ansible/pull/21054).
-
 ## Compatibility
 
 These are the tested GNU/Linux distributions. Maybe it works on some other
@@ -44,7 +40,6 @@ distributions too or just requieres a few changes.
 
 ## Requirements
 
-* [iptables_raw](https://github.com/Nordeus/ansible_iptables_raw)
 * A configured `sendxmpp_config` file so `fail2ban` is able to send the alerts.
 * `pip install -r requirements.txt`
 
@@ -65,15 +60,6 @@ notifications.
 * `fail2ban_trusted`: `fail2ban` trusted IPs, hosts or ranges.
 * `fail2ban_xmpp_notify`: address used by `fail2ban` to send notifications to.
 By default is the same as `admin_xmpp`.
-
-### iptables
-
-* `iptables_keep_unmanaged`: (Default: `true`) If set to `false` deletes all
-   rules which are not set by ansible_raw.
-* `iptables_rules_general`: Default `iptables` rules.
-* `iptables_policies_general`: Default `iptables` policies.
-* `iptables_rules_logging`: Default `iptables` logging rules. They will be
-placed at the end.
 
 ## Dependencies
 

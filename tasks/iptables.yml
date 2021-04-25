@@ -5,7 +5,6 @@
     state: present
   with_items:
     - iptables-persistent
-  notify: Restart Docker
 
 - name: Disable IPv6 globally
   lineinfile:
@@ -16,23 +15,98 @@
     mode: 0644
   notify: Activate sysctl
 
-- name: Set basic iptables rules
-  iptables_raw:
-    name: default_rules
-    weight: 10
-    keep_unmanaged: "{{ iptables_keep_unmanaged }}"
-    rules: "{{ iptables_rules_general }}"
+- name: iptables drop invalid
+  iptables:
+    chain: INPUT
+    match: state
+    ctstate: INVALID
+    jump: DROP
+    comment: drop invalid
+    action: insert
+    rule_num: 1
+  notify: save iptables
 
-- name: Set basic iptables policies
-  iptables_raw:
-    name: default_policies
-    keep_unmanaged: "{{ iptables_keep_unmanaged }}"
-    rules: "{{ iptables_policies_general }}"
+- name: iptables drop new TCP packets without the SYN flag
+  iptables:
+    chain: INPUT
+    protocol: tcp
+    syn: negate
+    match: state
+    ctstate: NEW
+    jump: DROP
+    comment: drop new TCP packets without the SYN flag
+    action: insert
+    rule_num: 2
+  notify: save iptables
 
-- name: Enable logging
-  iptables_raw:
-    name: enable_logging
-    weight: 99
-    keep_unmanaged: "{{ iptables_keep_unmanaged }}"
-    rules: "{{ iptables_rules_logging }}"
-  when: iptables_enable_logging
+- name: iptables drop XMAS packets
+  iptables:
+    chain: INPUT
+    protocol: tcp
+    tcp_flags:
+      flags: ALL
+      flags_set:
+        - FIN
+        - PSH
+        - URG
+    jump: LOG
+    log_prefix: "DROPPED XMAS PACKET:"
+    comment: drop XMAS packets
+    action: insert
+    rule_num: 3
+  notify: save iptables
+
+- name: iptables allow related and established connections
+  iptables:
+    chain: INPUT
+    ctstate: ESTABLISHED,RELATED
+    jump: ACCEPT
+    comment: allow related and established connections
+    action: insert
+    rule_num: 4
+  notify: save iptables
+
+- name: iptables allow internal traffic
+  iptables:
+    chain: INPUT
+    in_interface: lo
+    jump: ACCEPT
+    comment: allow internal traffic
+  notify: save iptables
+
+- name: iptables allow SSH port
+  iptables:
+    chain: INPUT
+    protocol: tcp
+    match: state
+    ctstate: NEW
+    jump: ACCEPT
+    comment: allow SSH port
+  notify: save iptables
+
+- name: iptables allow ICMP ping
+  iptables:
+    chain: INPUT
+    protocol: icmp
+    icmp_type: 8
+    jump: ACCEPT
+    comment: allow ICMP ping
+  notify: save iptables
+
+- name: iptables set the policy for the INPUT chain to DROP
+  iptables:
+    chain: INPUT
+    policy: DROP
+  notify: save iptables
+
+- name: iptables set the policy for the FORWARD chain to DROP
+  iptables:
+    chain: FORWARD
+    policy: DROP
+  notify: save iptables
+
+- name: iptables set the policy for the OUTPUT chain to ACCEPT
+  iptables:
+    chain: OUTPUT
+    policy: ACCEPT
+  notify: save iptables
