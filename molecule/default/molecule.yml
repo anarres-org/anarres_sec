@@ -7,7 +7,18 @@ driver:
     name: virtualbox
 platforms:
   - name: buster
-    image: library/debian:buster
+    box: debian/buster64
+    interfaces:
+      - network_name: private_network
+        auto_config: true
+        ip: 172.16.100.12
+        type: static
+    config_options:
+      vbguest.auto_update: false
+    instance_raw_config_args:
+      - "vm.synced_folder '.', '/vagrant', disabled: true"
+    groups:
+      - anarres
 lint: |
   set -e
   yamllint -c .yamllint .
