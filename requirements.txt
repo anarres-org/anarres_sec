@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe requirements.in
 #
-ansible-base==2.10.8
+ansible-base==2.10.9
     # via ansible
 ansible==3.3.0
     # via -r requirements.in
@@ -34,9 +34,9 @@ pyyaml==5.4.1
     # via ansible-base
 requests==2.25.1
     # via docker
-six==1.15.0
+six==1.16.0
     # via websocket-client
 urllib3==1.26.4
     # via requests
-websocket-client==0.58.0
+websocket-client==0.59.0
     # via docker
