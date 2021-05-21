@@ -3,7 +3,7 @@
 - name: Import iptables tasks
   import_tasks: iptables.yml
   tags: iptables
-  notify: Save iptables rules
+  notify: save iptables
 
 - name: Import fail2ban tasks
   import_tasks: fail2ban.yml
