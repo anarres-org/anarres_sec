@@ -4,9 +4,9 @@
 #
 #    pip-compile --allow-unsafe requirements.in
 #
-ansible-base==2.10.9
+ansible-core==2.11.0
     # via ansible
-ansible==3.4.0
+ansible==4.0.0
     # via -r requirements.in
 certifi==2020.12.5
     # via requests
@@ -15,28 +15,28 @@ cffi==1.14.5
 chardet==4.0.0
     # via requests
 cryptography==3.4.7
-    # via ansible-base
+    # via ansible-core
 docker==5.0.0
     # via -r requirements.in
 idna==2.10
     # via requests
-jinja2==3.0.0
-    # via ansible-base
-markupsafe==2.0.0
+jinja2==3.0.1
+    # via ansible-core
+markupsafe==2.0.1
     # via jinja2
 packaging==20.9
-    # via ansible-base
+    # via ansible-core
 pycparser==2.20
     # via cffi
 pyparsing==2.4.7
     # via packaging
 pyyaml==5.4.1
-    # via ansible-base
+    # via ansible-core
 requests==2.25.1
     # via docker
-six==1.16.0
-    # via websocket-client
+resolvelib==0.5.4
+    # via ansible-core
 urllib3==1.26.4
     # via requests
-websocket-client==0.59.0
+websocket-client==1.0.0
     # via docker
