@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe requirements.in
 #
-ansible-core==2.11.0
+ansible-core==2.11.1
     # via ansible
 ansible==4.0.0
     # via -r requirements.in
@@ -36,7 +36,7 @@ requests==2.25.1
     # via docker
 resolvelib==0.5.4
     # via ansible-core
-urllib3==1.26.4
+urllib3==1.26.5
     # via requests
-websocket-client==1.0.0
+websocket-client==1.0.1
     # via docker
