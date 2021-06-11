@@ -6,7 +6,7 @@
 #
 ansible-core==2.11.1
     # via ansible
-ansible==4.0.0
+ansible==4.1.0
     # via -r requirements.in
 certifi==2021.5.30
     # via requests
@@ -38,5 +38,5 @@ resolvelib==0.5.4
     # via ansible-core
 urllib3==1.26.5
     # via requests
-websocket-client==1.0.1
+websocket-client==1.1.0
     # via docker

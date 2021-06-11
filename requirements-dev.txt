@@ -6,11 +6,11 @@
 #
 ansible-core==2.11.1
     # via ansible
-ansible-lint==5.0.11
+ansible-lint==5.0.12
     # via
     #   -r requirements-dev.in
     #   molecule
-ansible==4.0.0
+ansible==4.1.0
     # via -r requirements.in
 appdirs==1.4.4
     # via virtualenv
@@ -80,7 +80,7 @@ filelock==3.0.12
     # via virtualenv
 flake8==3.9.2
     # via -r requirements-dev.in
-identify==2.2.8
+identify==2.2.10
     # via pre-commit
 idna==2.10
     # via requests
@@ -101,7 +101,7 @@ mccabe==0.6.1
     # via flake8
 molecule-docker==0.2.4
     # via molecule
-molecule[docker]==3.3.3
+molecule[docker]==3.3.4
     # via
     #   -r requirements-dev.in
     #   molecule-docker
@@ -166,14 +166,14 @@ requests==2.25.1
     #   docker
 resolvelib==0.5.4
     # via ansible-core
-rich==10.2.2
+rich==10.3.0
     # via
     #   ansible-lint
     #   enrich
     #   molecule
 ruamel.yaml.clib==0.2.2
     # via ruamel.yaml
-ruamel.yaml==0.17.7
+ruamel.yaml==0.17.9
     # via ansible-lint
 selinux==0.2.1
     # via
@@ -187,7 +187,7 @@ six==1.16.0
     #   python-dateutil
     #   tenacity
     #   virtualenv
-subprocess-tee==0.3.1
+subprocess-tee==0.3.2
     # via molecule
 tenacity==7.0.0
     # via ansible-lint
@@ -211,7 +211,7 @@ wcmatch==8.2
     # via ansible-lint
 wcwidth==0.2.5
     # via prompt-toolkit
-websocket-client==1.0.1
+websocket-client==1.1.0
     # via docker
 yamllint==1.26.1
     # via -r requirements-dev.in
