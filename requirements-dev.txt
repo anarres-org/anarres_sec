@@ -39,7 +39,7 @@ cfgv==3.3.0
     # via pre-commit
 chardet==4.0.0
     # via binaryornot
-charset-normalizer==2.0.3
+charset-normalizer==2.0.4
     # via requests
 click==8.0.1
     # via
@@ -66,7 +66,7 @@ decli==0.5.2
     # via commitizen
 distlib==0.3.2
     # via virtualenv
-distro==1.5.0
+distro==1.6.0
     # via selinux
 docker==5.0.0
     # via
@@ -80,7 +80,7 @@ filelock==3.0.12
     # via virtualenv
 flake8==3.9.2
     # via -r requirements-dev.in
-identify==2.2.11
+identify==2.2.12
     # via pre-commit
 idna==3.2
     # via requests
@@ -99,7 +99,7 @@ markupsafe==2.0.1
     # via jinja2
 mccabe==0.6.1
     # via flake8
-molecule[docker]==3.3.4
+molecule[docker]==3.4.0
     # via
     #   -r requirements-dev.in
     #   molecule-docker
@@ -168,7 +168,7 @@ requests==2.26.0
     #   docker
 resolvelib==0.5.4
     # via ansible-core
-rich==10.6.0
+rich==10.7.0
     # via
     #   ansible-lint
     #   enrich
@@ -206,15 +206,15 @@ tomlkit==0.7.2
     # via commitizen
 urllib3==1.26.6
     # via requests
-virtualenv==20.6.0
+virtualenv==20.7.0
     # via pre-commit
 wcmatch==8.2
     # via ansible-lint
 wcwidth==0.2.5
     # via prompt-toolkit
-websocket-client==1.1.0
+websocket-client==1.1.1
     # via docker
-yamllint==1.26.1
+yamllint==1.26.2
     # via -r requirements-dev.in
 
 # The following packages are considered to be unsafe in a requirements file:
