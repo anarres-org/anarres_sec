@@ -82,7 +82,7 @@ filelock==3.0.12
     # via virtualenv
 flake8==3.9.2
     # via -r requirements-dev.in
-identify==2.2.13
+identify==2.2.14
     # via pre-commit
 idna==3.2
     # via requests
@@ -222,7 +222,7 @@ yamllint==1.26.3
     # via -r requirements-dev.in
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==57.4.0
+setuptools==58.0.4
     # via
     #   cerberus
     #   molecule
