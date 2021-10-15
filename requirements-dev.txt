@@ -4,13 +4,13 @@
 #
 #    pip-compile --allow-unsafe requirements-dev.in
 #
-ansible==4.6.0
+ansible==4.7.0
     # via -r requirements.in
 ansible-compat==0.5.0
     # via
     #   molecule
     #   molecule-docker
-ansible-core==2.11.5
+ansible-core==2.11.6
     # via ansible
 ansible-lint==5.2.0
     # via -r requirements-dev.in
@@ -30,9 +30,9 @@ bracex==2.1.1
     # via wcmatch
 cerberus==1.3.2
     # via molecule
-certifi==2021.5.30
+certifi==2021.10.8
     # via requests
-cffi==1.14.6
+cffi==1.15.0
     # via
     #   bcrypt
     #   cryptography
@@ -41,9 +41,9 @@ cfgv==3.3.1
     # via pre-commit
 chardet==4.0.0
     # via binaryornot
-charset-normalizer==2.0.6
+charset-normalizer==2.0.7
     # via requests
-click==8.0.1
+click==8.0.3
     # via
     #   click-help-colors
     #   cookiecutter
@@ -80,11 +80,11 @@ enrich==1.2.6
     #   molecule
 filelock==3.3.0
     # via virtualenv
-flake8==3.9.2
+flake8==4.0.1
     # via -r requirements-dev.in
 identify==2.3.0
     # via pre-commit
-idna==3.2
+idna==3.3
     # via requests
 iniconfig==1.1.1
     # via pytest
@@ -116,7 +116,7 @@ packaging==21.0
     #   commitizen
     #   molecule
     #   pytest
-paramiko==2.7.2
+paramiko==2.8.0
     # via molecule
 pathspec==0.9.0
     # via yamllint
@@ -134,11 +134,11 @@ prompt-toolkit==3.0.20
     # via questionary
 py==1.10.0
     # via pytest
-pycodestyle==2.7.0
+pycodestyle==2.8.0
     # via flake8
 pycparser==2.20
     # via cffi
-pyflakes==2.3.1
+pyflakes==2.4.0
     # via flake8
 pygments==2.10.0
     # via rich
