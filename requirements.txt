@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe requirements.in
 #
-ansible==4.7.0
+ansible==4.8.0
     # via -r requirements.in
 ansible-core==2.11.6
     # via ansible
@@ -24,11 +24,11 @@ jinja2==3.0.2
     # via ansible-core
 markupsafe==2.0.1
     # via jinja2
-packaging==21.0
+packaging==21.2
     # via ansible-core
 pycparser==2.20
     # via cffi
-pyparsing==3.0.3
+pyparsing==2.4.7
     # via packaging
 pyyaml==6.0
     # via ansible-core
