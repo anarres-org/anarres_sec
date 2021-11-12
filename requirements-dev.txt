@@ -20,7 +20,7 @@ arrow==1.2.1
     # via jinja2-time
 attrs==21.2.0
     # via pytest
-backports.entry-points-selectable==1.1.0
+backports.entry-points-selectable==1.1.1
     # via virtualenv
 bcrypt==3.2.0
     # via paramiko
@@ -82,13 +82,13 @@ filelock==3.3.2
     # via virtualenv
 flake8==4.0.1
     # via -r requirements-dev.in
-identify==2.3.3
+identify==2.3.5
     # via pre-commit
 idna==3.3
     # via requests
 iniconfig==1.1.1
     # via pytest
-jinja2==3.0.2
+jinja2==3.0.3
     # via
     #   ansible-core
     #   commitizen
@@ -136,7 +136,7 @@ py==1.11.0
     # via pytest
 pycodestyle==2.8.0
     # via flake8
-pycparser==2.20
+pycparser==2.21
     # via cffi
 pyflakes==2.4.0
     # via flake8
@@ -172,7 +172,7 @@ requests==2.26.0
     #   molecule-docker
 resolvelib==0.5.4
     # via ansible-core
-rich==10.12.0
+rich==10.13.0
     # via
     #   ansible-lint
     #   enrich

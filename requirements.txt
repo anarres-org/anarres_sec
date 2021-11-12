@@ -20,13 +20,13 @@ docker==5.0.3
     # via -r requirements.in
 idna==3.3
     # via requests
-jinja2==3.0.2
+jinja2==3.0.3
     # via ansible-core
 markupsafe==2.0.1
     # via jinja2
 packaging==21.2
     # via ansible-core
-pycparser==2.20
+pycparser==2.21
     # via cffi
 pyparsing==2.4.7
     # via packaging
