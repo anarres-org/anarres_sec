@@ -78,11 +78,11 @@ enrich==1.2.6
     # via
     #   ansible-lint
     #   molecule
-filelock==3.3.2
+filelock==3.4.0
     # via virtualenv
 flake8==4.0.1
     # via -r requirements-dev.in
-identify==2.3.5
+identify==2.4.0
     # via pre-commit
 idna==3.3
     # via requests
@@ -109,7 +109,7 @@ molecule-docker==1.1.0
     # via molecule
 nodeenv==1.6.0
     # via pre-commit
-packaging==21.2
+packaging==21.3
     # via
     #   ansible-core
     #   ansible-lint
@@ -144,7 +144,7 @@ pygments==2.10.0
     # via rich
 pynacl==1.4.0
     # via paramiko
-pyparsing==2.4.7
+pyparsing==3.0.6
     # via packaging
 pytest==6.2.5
     # via pytest-testinfra
@@ -172,7 +172,7 @@ requests==2.26.0
     #   molecule-docker
 resolvelib==0.5.4
     # via ansible-core
-rich==10.13.0
+rich==10.14.0
     # via
     #   ansible-lint
     #   enrich
@@ -220,7 +220,7 @@ yamllint==1.26.3
     # via -r requirements-dev.in
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==58.5.3
+setuptools==59.2.0
     # via
     #   cerberus
     #   selinux

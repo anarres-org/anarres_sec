@@ -24,11 +24,11 @@ jinja2==3.0.3
     # via ansible-core
 markupsafe==2.0.1
     # via jinja2
-packaging==21.2
+packaging==21.3
     # via ansible-core
 pycparser==2.21
     # via cffi
-pyparsing==2.4.7
+pyparsing==3.0.6
     # via packaging
 pyyaml==6.0
     # via ansible-core
