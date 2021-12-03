@@ -4,15 +4,15 @@
 #
 #    pip-compile --allow-unsafe requirements-dev.in
 #
-ansible==4.9.0
+ansible==5.0.1
     # via -r requirements.in
 ansible-compat==0.5.0
     # via
     #   molecule
     #   molecule-docker
-ansible-core==2.11.6
+ansible-core==2.12.0
     # via ansible
-ansible-lint==5.2.1
+ansible-lint==5.3.0
     # via -r requirements-dev.in
 argcomplete==1.12.3
     # via commitizen
@@ -116,7 +116,7 @@ packaging==21.3
     #   commitizen
     #   molecule
     #   pytest
-paramiko==2.8.0
+paramiko==2.8.1
     # via molecule
 pathspec==0.9.0
     # via yamllint
@@ -128,9 +128,9 @@ pluggy==1.0.0
     #   pytest
 poyo==0.5.0
     # via cookiecutter
-pre-commit==2.15.0
+pre-commit==2.16.0
     # via -r requirements-dev.in
-prompt-toolkit==3.0.22
+prompt-toolkit==3.0.23
     # via questionary
 py==1.11.0
     # via pytest
@@ -172,7 +172,7 @@ requests==2.26.0
     #   molecule-docker
 resolvelib==0.5.4
     # via ansible-core
-rich==10.14.0
+rich==10.15.2
     # via
     #   ansible-lint
     #   enrich
@@ -220,7 +220,7 @@ yamllint==1.26.3
     # via -r requirements-dev.in
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==59.2.0
+setuptools==59.4.0
     # via
     #   cerberus
     #   selinux
