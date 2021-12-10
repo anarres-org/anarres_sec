@@ -10,9 +10,9 @@ ansible-compat==0.5.0
     # via
     #   molecule
     #   molecule-docker
-ansible-core==2.12.0
+ansible-core==2.12.1
     # via ansible
-ansible-lint==5.3.0
+ansible-lint==5.3.1
     # via -r requirements-dev.in
 argcomplete==1.12.3
     # via commitizen
@@ -41,7 +41,7 @@ cfgv==3.3.1
     # via pre-commit
 chardet==4.0.0
     # via binaryornot
-charset-normalizer==2.0.8
+charset-normalizer==2.0.9
     # via requests
 click==8.0.3
     # via
@@ -66,7 +66,7 @@ cryptography==36.0.0
     #   paramiko
 decli==0.5.2
     # via commitizen
-distlib==0.3.3
+distlib==0.3.4
     # via virtualenv
 distro==1.6.0
     # via selinux
@@ -130,7 +130,7 @@ poyo==0.5.0
     # via cookiecutter
 pre-commit==2.16.0
     # via -r requirements-dev.in
-prompt-toolkit==3.0.23
+prompt-toolkit==3.0.24
     # via questionary
 py==1.11.0
     # via pytest
@@ -148,7 +148,7 @@ pyparsing==3.0.6
     # via packaging
 pytest==6.2.5
     # via pytest-testinfra
-pytest-testinfra==6.4.0
+pytest-testinfra==6.5.0
     # via testinfra
 python-dateutil==2.8.2
     # via arrow
@@ -214,13 +214,13 @@ wcmatch==8.3
     # via ansible-lint
 wcwidth==0.2.5
     # via prompt-toolkit
-websocket-client==1.2.1
+websocket-client==1.2.3
     # via docker
 yamllint==1.26.3
     # via -r requirements-dev.in
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==59.4.0
+setuptools==59.5.0
     # via
     #   cerberus
     #   selinux
