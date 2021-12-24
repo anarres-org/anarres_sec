@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe requirements.in
 #
-ansible==5.0.1
+ansible==5.1.0
     # via -r requirements.in
 ansible-core==2.12.1
     # via ansible
