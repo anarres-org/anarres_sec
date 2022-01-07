@@ -39,7 +39,7 @@ cfgv==3.3.1
     # via pre-commit
 chardet==4.0.0
     # via binaryornot
-charset-normalizer==2.0.9
+charset-normalizer==2.0.10
     # via requests
 click==8.0.3
     # via
@@ -80,7 +80,7 @@ filelock==3.4.2
     # via virtualenv
 flake8==4.0.1
     # via -r requirements-dev.in
-identify==2.4.1
+identify==2.4.2
     # via pre-commit
 idna==3.3
     # via requests
@@ -138,7 +138,7 @@ pycparser==2.21
     # via cffi
 pyflakes==2.4.0
     # via flake8
-pygments==2.11.0
+pygments==2.11.2
     # via rich
 pynacl==1.4.0
     # via paramiko
@@ -163,19 +163,19 @@ pyyaml==5.4.1
     #   yamllint
 questionary==1.10.0
     # via commitizen
-requests==2.26.0
+requests==2.27.1
     # via
     #   cookiecutter
     #   docker
     #   molecule-docker
 resolvelib==0.5.4
     # via ansible-core
-rich==10.16.1
+rich==10.16.2
     # via
     #   ansible-lint
     #   enrich
     #   molecule
-ruamel.yaml==0.17.19
+ruamel.yaml==0.17.20
     # via ansible-lint
 ruamel.yaml.clib==0.2.6
     # via ruamel.yaml
@@ -210,7 +210,7 @@ typing-extensions==4.0.1
     # via commitizen
 urllib3==1.26.7
     # via requests
-virtualenv==20.11.2
+virtualenv==20.13.0
     # via pre-commit
 wcmatch==8.3
     # via ansible-lint
@@ -222,7 +222,7 @@ yamllint==1.26.3
     # via -r requirements-dev.in
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==60.2.0
+setuptools==60.3.1
     # via
     #   cerberus
     #   selinux
