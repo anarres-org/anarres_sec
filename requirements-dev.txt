@@ -16,7 +16,7 @@ ansible-lint==5.3.2
     # via -r requirements-dev.in
 argcomplete==1.12.3
     # via commitizen
-arrow==1.2.1
+arrow==1.2.2
     # via jinja2-time
 attrs==21.4.0
     # via pytest
@@ -80,7 +80,7 @@ filelock==3.4.2
     # via virtualenv
 flake8==4.0.1
     # via -r requirements-dev.in
-identify==2.4.4
+identify==2.4.6
     # via pre-commit
 idna==3.3
     # via requests
@@ -128,7 +128,7 @@ poyo==0.5.0
     # via cookiecutter
 pre-commit==2.17.0
     # via -r requirements-dev.in
-prompt-toolkit==3.0.24
+prompt-toolkit==3.0.26
     # via questionary
 py==1.11.0
     # via pytest
@@ -142,7 +142,7 @@ pygments==2.11.2
     # via rich
 pynacl==1.5.0
     # via paramiko
-pyparsing==3.0.6
+pyparsing==3.0.7
     # via packaging
 pytest==6.2.5
     # via pytest-testinfra
