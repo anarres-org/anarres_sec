@@ -1,16 +1,16 @@
 ---
 - name: Restart fail2ban
-  service:
+  ansible.builtin.service:
     name: fail2ban
     state: restarted
 
 - name: Restart sshd
-  service:
+  ansible.builtin.service:
     name: sshd
     state: restarted
 
 - name: Activate sysctl
-  command: "sysctl -p /etc/sysctl.conf"
+  ansible.builtin.command: "sysctl -p /etc/sysctl.conf"
 
 - name: save iptables
-  command: netfilter-persistent save
+  ansible.builtin.command: netfilter-persistent save

@@ -1,6 +1,6 @@
 ---
 - name: Replace sshd configuration
-  template:
+  ansible.builtin.template:
     src: sshd.j2
     dest: /etc/ssh/sshd_config
     mode: 0640
