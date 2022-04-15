@@ -143,11 +143,11 @@ pygments==2.11.2
     # via rich
 pynacl==1.5.0
     # via paramiko
-pyparsing==3.0.7
+pyparsing==3.0.8
     # via packaging
 pytest==7.1.1
     # via pytest-testinfra
-pytest-testinfra==6.6.0
+pytest-testinfra==6.7.0
     # via testinfra
 python-dateutil==2.8.2
     # via arrow
@@ -207,7 +207,7 @@ typing-extensions==4.1.1
     # via commitizen
 urllib3==1.26.9
     # via requests
-virtualenv==20.14.0
+virtualenv==20.14.1
     # via pre-commit
 wcmatch==8.3
     # via ansible-lint
@@ -221,7 +221,7 @@ yamllint==1.26.3
     #   ansible-lint
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==62.0.0
+setuptools==62.1.0
     # via
     #   cerberus
     #   selinux
