@@ -28,7 +28,7 @@ packaging==21.3
     # via ansible-core
 pycparser==2.21
     # via cffi
-pyparsing==3.0.8
+pyparsing==3.0.9
     # via packaging
 pyyaml==6.0
     # via ansible-core
