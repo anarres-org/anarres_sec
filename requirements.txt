@@ -4,11 +4,11 @@
 #
 #    pip-compile --allow-unsafe requirements.in
 #
-ansible==5.7.1
+ansible==5.8.0
     # via -r requirements.in
 ansible-core==2.12.5
     # via ansible
-certifi==2021.10.8
+certifi==2022.5.18.1
     # via requests
 cffi==1.15.0
     # via cryptography
