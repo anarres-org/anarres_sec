@@ -4,7 +4,7 @@
 #
 #    pip-compile --allow-unsafe requirements.in
 #
-ansible==5.8.0
+ansible==5.9.0
     # via -r requirements.in
 ansible-core==2.12.6
     # via ansible
@@ -32,7 +32,7 @@ pyparsing==3.0.9
     # via packaging
 pyyaml==6.0
     # via ansible-core
-requests==2.27.1
+requests==2.28.0
     # via docker
 resolvelib==0.5.4
     # via ansible-core
