@@ -6,15 +6,6 @@
   with_items:
     - iptables-persistent
 
-- name: Disable IPv6 globally
-  ansible.builtin.lineinfile:
-    line: 'net.ipv6.conf.all.disable_ipv6 = 1'
-    state: present
-    insertafter: EOF
-    path: /etc/sysctl.conf
-    mode: 0644
-  notify: Activate sysctl
-
 - name: iptables drop invalid
   ansible.builtin.iptables:
     chain: INPUT

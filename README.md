@@ -2,7 +2,7 @@
 
 Ansible role for basic GNU/Linux server hardening.
 
-* Sets up `iptables` for IPv4. **IPv6** will be disabled.
+* Sets up `iptables`.
   * Will disable all incoming traffic by default except for established
   connectios, ICMP type 8 pings, the ssh_port and the **loopback** network
   traffic.

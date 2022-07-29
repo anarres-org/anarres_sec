@@ -9,8 +9,5 @@
     name: sshd
     state: restarted
 
-- name: Activate sysctl
-  ansible.builtin.command: "sysctl -p /etc/sysctl.conf"
-
 - name: save iptables
   ansible.builtin.command: netfilter-persistent save
