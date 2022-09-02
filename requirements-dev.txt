@@ -14,7 +14,7 @@ ansible-core==2.13.3
     # via
     #   ansible
     #   ansible-lint
-ansible-lint==6.5.1
+ansible-lint==6.5.2
     # via -r requirements-dev.in
 argcomplete==1.12.3
     # via commitizen
@@ -26,6 +26,8 @@ attrs==22.1.0
     #   pytest
 binaryornot==0.4.4
     # via cookiecutter
+black==22.8.0
+    # via ansible-lint
 bracex==2.3.post1
     # via wcmatch
 cerberus==1.3.2
@@ -44,6 +46,7 @@ charset-normalizer==2.1.1
     #   requests
 click==8.1.3
     # via
+    #   black
     #   click-help-colors
     #   cookiecutter
     #   molecule
@@ -61,7 +64,7 @@ cryptography==37.0.4
     # via ansible-core
 decli==0.5.2
     # via commitizen
-distlib==0.3.5
+distlib==0.3.6
     # via virtualenv
 distro==1.7.0
     # via selinux
@@ -94,7 +97,7 @@ jinja2==3.1.2
     #   molecule
 jinja2-time==0.2.0
     # via cookiecutter
-jsonschema==4.14.0
+jsonschema==4.15.0
     # via
     #   ansible-compat
     #   ansible-lint
@@ -108,6 +111,8 @@ molecule[docker]==4.0.1
     #   molecule-docker
 molecule-docker==2.0.0
     # via molecule
+mypy-extensions==0.4.3
+    # via black
 nodeenv==1.7.0
     # via pre-commit
 packaging==21.3
@@ -118,10 +123,14 @@ packaging==21.3
     #   docker
     #   molecule
     #   pytest
-pathspec==0.9.0
-    # via yamllint
+pathspec==0.10.0
+    # via
+    #   black
+    #   yamllint
 platformdirs==2.5.2
-    # via virtualenv
+    # via
+    #   black
+    #   virtualenv
 pluggy==1.0.0
     # via
     #   molecule
@@ -195,7 +204,9 @@ text-unidecode==1.3
 toml==0.10.2
     # via pre-commit
 tomli==2.0.1
-    # via pytest
+    # via
+    #   black
+    #   pytest
 tomlkit==0.11.4
     # via commitizen
 typing-extensions==4.3.0
@@ -204,7 +215,7 @@ urllib3==1.26.12
     # via
     #   docker
     #   requests
-virtualenv==20.16.3
+virtualenv==20.16.4
     # via pre-commit
 wcmatch==8.4
     # via ansible-lint
