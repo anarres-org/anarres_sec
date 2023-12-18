@@ -69,6 +69,7 @@
   ansible.builtin.iptables:
     chain: INPUT
     protocol: tcp
+    destination_port: "{{ ssh_port }}"
     match: state
     ctstate: NEW
     jump: ACCEPT
